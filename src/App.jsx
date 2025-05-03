@@ -9,7 +9,6 @@ import MyBookingsPage from './pages/MyBookingsPage'
 const App = () => {
   return (
     <div>
-      <h1>Booking app</h1>
       <Routes>
         <Route path='/' element={<LoginPage/>}/>
         <Route path='/home' element={<HomePage/>}/>
