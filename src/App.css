@@ -8,6 +8,38 @@
   text-align: center;
 }
 
+.loginBtn {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease-in-out, color 0.6s ease-in-out, transform 0.4s ease;
+}
+
+.loginBtn:hover {
+  background-color:  #0e4b5c;
+  color: white;
+  border-color:  #0e4b5c;
+}
+
+.loader {
+  width: 88px;
+  height: 88px;
+  border: 10px solid #ffecd2;
+  border-bottom-color: #0e4b5c;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
 .logo {
   height: 6em;
   padding: 1.5em;
