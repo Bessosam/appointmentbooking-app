@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import BookingPage from './pages/BookingPage'
+import BookingConfirmationPage from './pages/BookingConfirmationPage'
 import MyBookingsPage from './pages/MyBookingsPage'
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<LoginPage/>}/>
         <Route path='/home' element={<HomePage/>}/>
-        <Route path='/booking' element={<BookingPage/>}/>
+        <Route path='/booking' element={<BookingPage />}/>
+        <Route path='/confirmbooking' element={<BookingConfirmationPage/>}/>
         <Route path='/mybookings' element={<MyBookingsPage/>}/>
       </Routes>
     </>

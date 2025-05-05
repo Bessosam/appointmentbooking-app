@@ -1,12 +1,9 @@
-import React from "react";
-import BookingForm from "../components/BookingForm";
+import React from 'react'
 
 const BookingPage = () => {
   return (
-    <div className="booking-page">
-      <BookingForm />
-    </div>
-  );
-};
+    <div>BookingPage</div>
+  )
+}
 
-export default BookingPage;
+export default BookingPage
