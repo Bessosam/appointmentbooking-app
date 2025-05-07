@@ -1,36 +1,52 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const BookingConfirmationPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const bookingDetails = location.state
-    ? {
-      id: Date.now(),
-      date: location.state.date,
-      time: location.state.time,
-      location: 'QuickWash Tvätt',
-    }
-    : null;
+  // Try to get booking details from route state or fallback from localStorage
+  const bookingDetails = location.state || JSON.parse(localStorage.getItem('selectedBooking'));
 
   const handleConfirm = () => {
-    const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
-    localStorage.setItem('bookings', JSON.stringify([...existingBookings, bookingDetails]));
-    navigate('/mybookings');
+    if (!bookingDetails) return;
+
+    const { date, time } = bookingDetails;
+
+    // Update the main booking data (set slot to 'booked')
+    const existingData = JSON.parse(localStorage.getItem("bookingData")) || {};
+    const updatedData = {
+      ...existingData,
+      [date]: {
+        ...(existingData[date] || {}),
+        [time]: "booked",
+      },
+    };
+    localStorage.setItem("bookingData", JSON.stringify(updatedData));
+
+    // Save separately in confirmedBookings
+    const myConfirmed = JSON.parse(localStorage.getItem("confirmedBookings")) || [];
+    myConfirmed.push({ date, time });
+    localStorage.setItem("confirmedBookings", JSON.stringify(myConfirmed));
+
+    alert("Bokningen har bekräftats!");
+    navigate("/mybookings");
   };
 
   const handleCancel = () => {
-    navigate('/booking');
+    navigate("/booking");
   };
 
+  // If there's no booking info, show a fallback message
   if (!bookingDetails) {
     return (
       <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
-        <h2 className="text-xl font-semibold text-red-600 mb-4">Ingen bokningsinformation hittades</h2>
+        <h2 className="text-xl font-semibold text-red-600 mb-4">
+          Ingen bokningsinformation hittades
+        </h2>
         <p className="text-gray-600">Gå tillbaka och välj en tid.</p>
         <button
-          onClick={() => navigate('/booking')}
+          onClick={handleCancel}
           className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
         >
           Tillbaka
@@ -39,27 +55,25 @@ const BookingConfirmationPage = () => {
     );
   }
 
+  // Main confirmation content
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Bekräfta din bokning</h2>
-
-      <div className="text-gray-700 space-y-2 border p-4 rounded-lg shadow-sm bg-gray-50">
+      <h2 className="text-xl font-bold text-center mb-4">Bekräfta Bokning</h2>
+      <div className="text-gray-800 space-y-2 mb-6">
         <p><strong>Datum:</strong> {bookingDetails.date}</p>
         <p><strong>Tid:</strong> {bookingDetails.time}</p>
-        <p><strong>Plats:</strong> {bookingDetails.location}</p>
+        <p><strong>Plats:</strong> QuickWash Tvätt</p>
       </div>
-
-      <div className="flex justify-between mt-6 gap-2">
+      <div className="flex justify-between">
         <button
           onClick={handleCancel}
-          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded"
+          className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
         >
           Avbryt
         </button>
-
         <button
           onClick={handleConfirm}
-          className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
         >
           Bekräfta
         </button>

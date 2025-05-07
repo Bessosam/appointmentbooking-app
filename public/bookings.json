@@ -1,0 +1,108 @@
+{
+    "2025-05-01": {
+      "07:00": "available",
+      "10:00": "booked",
+      "13:00": "booked",
+      "16:00": "available",
+      "19:00": "booked"
+    },
+    "2025-05-02": {
+      "07:00": "booked",
+      "10:00": "available",
+      "13:00": "booked",
+      "16:00": "available",
+      "19:00": "available"
+    },
+    "2025-05-03": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "booked",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-04": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-05": {
+      "07:00": "booked",
+      "10:00": "booked",
+      "13:00": "available",
+      "16:00": "available",
+      "19:00": "booked"
+    },
+    "2025-05-06": {
+      "07:00": "available",
+      "10:00": "booked",
+      "13:00": "booked",
+      "16:00": "available",
+      "19:00": "available"
+    },
+    "2025-05-07": {
+      "07:00": "booked",
+      "10:00": "available",
+      "13:00": "booked",
+      "16:00": "booked",
+      "19:00": "available"
+    },
+    "2025-05-08": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-09": {
+      "07:00": "available",
+      "10:00": "booked",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "available"
+    },
+    "2025-05-12": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-22": {
+      "07:00": "available",
+      "10:00": "booked",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-19": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-24": {
+      "07:00": "available",
+      "10:00": "booked",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "available"
+    },
+    "2025-05-25": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-28": {
+      "07:00": "available",
+      "10:00": "booked",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "available"
+    }
+  }
+  

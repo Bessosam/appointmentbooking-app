@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage'
 import MenuPage from './pages/MenuPage'
 import BookingPage from './pages/BookingPage'
 import BookingConfirmationPage from './pages/BookingConfirmationPage'
-import MyBookingsPage from './pages/MyBookingsPage'
+import MyBookings from './pages/MyBookings'
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         <Route path='/menu' element={<MenuPage/>}/>
         <Route path='/booking' element={<BookingPage />}/>
         <Route path='/confirm' element={<BookingConfirmationPage/>}/>
-        <Route path='/mybookings' element={<MyBookingsPage/>}/>
+        <Route path='/mybookings' element={<MyBookings/>}/>
       </Routes>
     </>
   );
