@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import users from '../users.json';
 
@@ -6,6 +6,7 @@ import LoginTitle from '../components/LoginTitle';
 import LoginFooter from '../components/LoginFooter';
 import LoginForm from '../components/LoginForm';
 import { Lock } from 'lucide-react';
+import PageDecoration from '../components/PageDecoration';
 
 const LoginPage = () => {
   const [userid, setUserid] = useState('');
@@ -22,7 +23,7 @@ const LoginPage = () => {
       const findUser = users.find(user => user.userid === userid && user.password === password);
 
       if (findUser) {
-        navigate('/home');
+        navigate('/menu');
       } else {
         alert('Wrong ID or Password');
         setPassword('');
@@ -31,8 +32,22 @@ const LoginPage = () => {
     }, 3000);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    // Clean up when the component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   return (
-    <div className='flex min-h-full justify-center'>
+    <div className='flex min-h-screen justify-center'>
+
+    <PageDecoration/>
+
+
+
       {loading && (
         <>
           <div className='absolute top-0 left-0 w-full h-full backdrop-blur bg-white/50 z-10' />
@@ -43,8 +58,8 @@ const LoginPage = () => {
         </>
       )}
 
-      <div className='w-full flex justify-center items-center h-full bg-gray-100 rounded-md p-4 bg-gradient-to-br from-[#0e4b5c] via-[#0f7c8d] to-[#ffecd2] shadow-md' style={{ fontFamily: 'Roboto, sans-serif' }}>
-        <div className='w-full max-w-sm px-8'>
+      <div className='w-full h-screen flex justify-center items-center h-full bg-gray-100 rounded-md p-4 bg-gradient-to-br from-[#0e4b5c] via-[#2958A9] to-[#ffecd2] shadow-md' style={{ fontFamily: 'Roboto, sans-serif' }}>
+        <div className='w-full max-w-sm px-8 z-10'>
           <LoginTitle mode={mode} />
 
           <LoginForm
@@ -61,6 +76,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

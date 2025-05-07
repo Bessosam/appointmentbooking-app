@@ -3,7 +3,7 @@ import { User, Lock } from 'lucide-react';
 
 const LoginForm = ({ userid, setUserid, password, setPassword, mode, loading, handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit} className='space-y-6'>
+    <form onSubmit={handleSubmit} className='space-y-4'>
       <label htmlFor='userid' className='mb-4 block text-sm font-medium text-gray-300'>Apartment Number or Email</label>
       <div className='flex items-center border rounded-md bg-gray-200 shadow-md'>
         <span className='px-2 text-gray-500'>
