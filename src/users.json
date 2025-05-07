@@ -1,6 +1,27 @@
 [
   {
+    "name": "Bassam",
     "userid": "user",
     "password": "password"
+  },
+  {
+    "name": "Maria",
+    "userid": "user2",
+    "password": "1234"
+  },
+  {
+    "name": "Yassmin",
+    "userid": "user3",
+    "password": "pass123"
+  },
+  {
+    "name": "Swathi",
+    "userid": "user4",
+    "password": "swathi1"
+  },
+  {
+    "name": "Johanns",
+    "userid": "user5",
+    "password": "johanns"
   }
 ]
