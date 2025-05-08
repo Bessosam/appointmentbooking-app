@@ -26,7 +26,7 @@ const Nav = () => {
           <button className={linkStyle} onClick={handleLogout}>
             Logga ut
           </button>
-          <span className="ml-2 text-black">👤 {user.userid}</span>
+          <span className="ml-2 text-black">👤 {user.name}</span>
         </>
       ) : (
         <Link className={linkStyle} to="/register">
