@@ -1,13 +1,16 @@
 import React from 'react';
 import { User, Lock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ userid, setUserid, password, setPassword, mode, loading, handleSubmit }) => {
+const LoginForm = ({ userid, setUserid, password, setPassword, mode, setMode, loading, handleSubmit }) => {
+  const navigate = useNavigate();
+
   return (
-    <form onSubmit={handleSubmit} className='space-y-4'>
-      <label htmlFor='userid' className='mb-4 block text-sm font-medium text-gray-300'>Apartment Number or Email</label>
-      <div className='flex items-center border rounded-md bg-gray-200 shadow-md'>
+    <form onSubmit={handleSubmit} className='space-y-2'>
+      <label htmlFor='userid' className='block text-md font-medium text-[#000000]/57 font-semibold'>ID/E-post</label>
+      <div className='flex items-center border rounded-md bg-white shadow-md'>
         <span className='px-2 text-gray-500'>
-          <User className='w-5 h-5' />
+          <User className='w-6 h-6 text-[#2958A9]' />
         </span>
         <input
           id='userid'
@@ -15,18 +18,18 @@ const LoginForm = ({ userid, setUserid, password, setPassword, mode, loading, ha
           onChange={(e) => setUserid(e.target.value)}
           required
           autoComplete='off'
-          className='p-4 bg-gray-100 rounded w-full outline-none focus:ring-2 focus:ring-cyan-700/50 text-xl font-semibold text-gray-800'
+          className='p-4 bg-white rounded w-full outline-none focus:ring-2 focus:ring-cyan-700/50 text-xl text-gray-800'
           type="text"
-          placeholder='Apartment number/email..'
+          placeholder='ID/E-post'
         />
       </div>
 
       {mode !== 'reset' && (
         <>
-          <label htmlFor='password' className='block text-sm font-medium text-gray-300'>Password</label>
-          <div className='flex items-center border rounded-md bg-gray-200 shadow-md'>
+          <label htmlFor='password' className='pt-4 block text-md font-medium text-[#000000]/57 font-semibold'>Lösenord</label>
+          <div className='flex items-center border rounded-md bg-white shadow-md'>
             <span className='px-2 text-gray-500'>
-              <Lock className='w-5 h-5' />
+              <Lock className='w-6 h-6 text-[#2958A9]' />
             </span>
             <input
               id='password'
@@ -34,27 +37,56 @@ const LoginForm = ({ userid, setUserid, password, setPassword, mode, loading, ha
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete='off'
-              className='p-4 bg-gray-100 rounded w-full outline-none focus:ring-2 focus:ring-cyan-700/50 text-xl font-semibold text-gray-800'
+              className='p-4 bg-white rounded w-full outline-none focus:ring-2 focus:ring-cyan-700/50 text-xl text-gray-800'
               type="password"
-              placeholder={mode === 'register' ? 'Choose a secure password' : 'Enter your password'}
+              placeholder={mode === 'register' ? 'Välj ett säkert lösenord' : 'Lösenord'}
             />
           </div>
         </>
       )}
 
+      <div>
+      <div className='text-center mt-4'>
+    {mode === 'login' && (
+      <div className='flex justify-center space-x-8 gap-20 mb-4'>
+              <p className='text-sm'>
+          <span onClick={() => setMode('reset')} className='text-[#2958A9] font-semibold cursor-pointer hover:underline'>
+            Glömt lösenord?
+          </span>
+        </p>
+        <p className='text-sm text-gray'>
+          <span onClick={() => setMode('register')} className='text-[#2958A9] font-semibold cursor-pointer hover:underline'>
+            Skapa konto
+          </span>
+        </p>
+      </div>
+    )}
+  </div>
+      </div>
+
       <button
         type='submit'
-        className='w-full rounded-md font-semibold text-xl py-2 transition-all duration-300 ease-in-out shadow-md cursor-pointer loginBtn'
+        className='w-full rounded-md font-semibold text-xl py-4 transition-all duration-300 ease-in-out shadow-md cursor-pointer loginBtn'
         disabled={loading}
       >
         {loading
-          ? 'Logging In...'
+          ? 'Loggar In...'
           : mode === 'login'
-            ? 'Login'
+            ? 'Logga in'
             : mode === 'register'
-              ? 'Register'
-              : 'Send Reset Link'}
+              ? 'Registrera'
+              : 'Skicka återställningslänk'}
       </button>
+
+    <div className='text-center mt-4'>
+      {(mode === 'register' || mode === 'reset') && (
+      <p className='text-sm'>
+        <span onClick={() => setMode('login')} className='text-[#000000]/57 font-semibold cursor-pointer hover:underline hover:underline'>
+          Tillbaka till login
+        </span>
+      </p>
+    )}
+    </div>
     </form>
   );
 };

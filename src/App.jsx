@@ -8,7 +8,7 @@ import BookingPage from './pages/BookingPage'
 import BookingConfirmationPage from './pages/BookingConfirmationPage'
 import MyBookings from './pages/MyBookings'
 
-const App = () => {
+const App = ({setMode}) => {
   return (
     <>
       <Header />

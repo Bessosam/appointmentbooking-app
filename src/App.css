@@ -1,13 +1,11 @@
 .loginBtn {
-  background-color: white;
-  color: black;
+  background-color: #2958A9;
+  color: white;
   transition: background-color 0.3s ease-in-out, color 0.6s ease-in-out, transform 0.4s ease;
 }
 
 .loginBtn:hover {
-  background-color:  #0e4b5c;
-  color: white;
-  border-color:  #0e4b5c;
+  background-color: #1d3d74;
 }
 
 .logoutBtn {
@@ -23,8 +21,8 @@
 .loader {
   width: 88px;
   height: 88px;
-  border: 10px solid #ffecd2;
-  border-bottom-color: #0e4b5c;
+  border: 10px solid #2958A9;
+  border-bottom-color: #00BFFF;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
@@ -38,7 +36,22 @@
   100% {
       transform: rotate(360deg);
   }
-  } 
+  }
+
+  .image-effect {
+    animation: scaleFadeIn 1s ease-out forwards;
+  }
+
+  @keyframes scaleFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
 /* #root {
   max-width: 1280px;
