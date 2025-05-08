@@ -69,6 +69,20 @@
       "16:00": "booked",
       "19:00": "booked"
     },
+    "2025-05-14": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
+    "2025-05-16": {
+      "07:00": "available",
+      "10:00": "available",
+      "13:00": "available",
+      "16:00": "booked",
+      "19:00": "booked"
+    },
     "2025-05-22": {
       "07:00": "available",
       "10:00": "booked",

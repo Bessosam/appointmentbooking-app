@@ -11,7 +11,7 @@ const BookingPage = () => {
 
   const formatDate = (date) => date.toLocaleDateString('en-CA');
 
-  // Load from localStorage or JSON
+  
   useEffect(() => {
     const localData = localStorage.getItem('bookingData');
     if (localData) {
@@ -26,7 +26,7 @@ const BookingPage = () => {
     }
   }, []);
 
-  // Handle booking and persist
+  
   const handleBook = (time) => {
     const dateKey = formatDate(selectedDate);
     const updatedData = {
