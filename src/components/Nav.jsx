@@ -17,6 +17,9 @@ const Nav = () => {
     <nav className="flex gap-4 items-center">
       {isLoggedIn ? (
         <>
+        <Link className={linkStyle} to="/menu">
+        <span className="ml-2 text-black">👤  {user.name}</span>
+        </Link>
           <Link className={linkStyle} to="/booking">
             Boka tvättstuga
           </Link>
@@ -26,7 +29,7 @@ const Nav = () => {
           <button className={linkStyle} onClick={handleLogout}>
             Logga ut
           </button>
-          <span className="ml-2 text-black">👤 {user.name}</span>
+          
         </>
       ) : (
         <Link className={linkStyle} to="/register">
