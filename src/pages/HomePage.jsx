@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react"; 
 import { useNavigate } from 'react-router-dom';
 import laundry from "../assets/laundry.png";
 import HomePageBg from "../assets/HomePageBg.png"; 
@@ -6,7 +6,16 @@ import HomePageBg from "../assets/HomePageBg.png";
 export default function Homepage () {
   const navigate = useNavigate();
   
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto"; 
+    };
+  }, []);
+
     return(
+      
     <div className="flex flex-col h-screen overflow-hidden">
 
       <div className="flex flex-1">
@@ -22,19 +31,21 @@ export default function Homepage () {
           </button>
         </div>
 
-         <div className="w-1/2 relative flex items-end justify-end pr-12"> 
+         <div className="w-1/2 items-end justify-end pr-12"> 
           <img
             src={laundry}
             alt="Laundry"
-            className="w-[400px] object-contain absolute bottom-0 right-0 z-10"
+            className="w-[410px] object-contain absolute bottom-0 right-0 z-10"
           />
           <img
             src={HomePageBg}
             alt="background"
-            className="w-[500px] object-contain relative z-0"
+            className="w-[500px] object-contain absolute bottom-0 right-0 z-0"
           />
         </div>
       </div>
     </div>
+
+    
     )
 }
