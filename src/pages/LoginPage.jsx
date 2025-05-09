@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import users from "../users.json";
 
 import LoginTitle from "../components/LoginTitle";
@@ -15,7 +14,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState("login");
-  const navigate = useNavigate();
 
   const { login } = useAuth(); // <-- lägg till detta
 
