@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"; 
 import { useNavigate } from 'react-router-dom';
-import laundry from "../assets/laundry.png";
-import HomePageBg from "../assets/HomePageBg.png"; 
+
 
 export default function Homepage () {
   const navigate = useNavigate();
@@ -33,14 +32,15 @@ export default function Homepage () {
 
          <div className="w-1/2 items-end justify-end pr-12"> 
           <img
-            src={laundry}
-            alt="Laundry"
+            src="/landing-page-img.svg"
+            alt=""
             className="w-[410px] object-contain absolute bottom-0 right-0 z-10"
           />
           <img
-            src={HomePageBg}
+            src="/DesignBG.svg"
             alt="background"
-            className="w-[500px] object-contain absolute bottom-0 right-0 z-0"
+            className="w-[500px] object-contain absolute bottom-0 right-0 z-0"           
+ 
           />
         </div>
       </div>
