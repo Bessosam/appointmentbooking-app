@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import users from "../users.json";
-
+import { useNavigate } from "react-router-dom";
 import LoginTitle from "../components/LoginTitle";
 import LoginForm from "../components/LoginForm";
 import { Lock } from "lucide-react";
@@ -15,7 +14,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState("login");
   const navigate = useNavigate();
-
+ 
   const { login } = useAuth(); // <-- lägg till detta
 
   const handleSubmit = (e) => {
