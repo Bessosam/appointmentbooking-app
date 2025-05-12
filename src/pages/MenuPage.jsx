@@ -3,7 +3,7 @@ import LogoutButton from "../components/LogoutButton";
 import { useNavigate } from "react-router-dom";
 import { FaCalendarPlus, FaClipboard, FaClipboardList } from "react-icons/fa";
 import PageDecoration from "../components/PageDecoration";
-import { House } from 'lucide-react';
+import { House, WashingMachine, Calendar } from 'lucide-react';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -31,26 +31,32 @@ const HomePage = () => {
           <h1 className="text-2xl font-bold mt-6">Välkommen!</h1>
         )}
         <h2 className="text-2xl font-bold mb-8">Välkommen till mina sidor</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 image-effect">
+        <div className="grid w-full grid-cols-2 md:grid-cols-2 gap-6 mb-10 image-effect">
+          <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-8 rounded-xl shadow-lg">
+          <WashingMachine size={40} className="text-[#0053FF]" />
+          <h2 className="font-bold text-3xl text-center">Boka tvättstuga</h2>
           <button
             onClick={() => {
               navigate("/booking");
             }}
-            className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 hover:bg-[#0053FF]/60 transition font-semibold p-8 rounded-xl shadow-lg"
-          >
-            <FaCalendarPlus size={40} /> Boka Tvättstuga
+            className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-xl"
+          > Boka nu
           </button>
+          </div>
+
+                    <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-8 rounded-xl shadow-lg">
+          <WashingMachine size={40} className="text-[#0053FF]" />
+          <h2 className="font-bold text-3xl text-center">Mina bokningar</h2>
           <button
             onClick={() => {
               navigate("/mybookings");
             }}
-            className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 hover:bg-[#0053FF]/60 transition font-semibold p-8 rounded-xl shadow-lg"
-          >
-            <FaClipboardList size={40} /> Mina Bokningar
+            className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-xl"
+          > Se här
           </button>
-          <div className="col-span-1 md:col-span-2 hover: transition backdrop-blur"></div>
-        </div>
+          </div>
       </div>
+    </div>
     </div>
   );
 };

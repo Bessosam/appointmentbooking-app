@@ -3,11 +3,11 @@ import React from 'react'
 const PageDecoration = () => {
   return (
     <div>
-          <div className="fixed absolute bottom-0 right-0 z-0 size-60">
+          <div className="fixed absolute bottom-0 right-0 z-0 size-60 opacity-90">
   <img
     src="/DesignBG.svg"
     alt=""
-    className="absolute top-20 right-0 z-0 w-full h-full image-effect"
+    className="absolute top-10 right-0 z-0 w-full h-full image-effect"
   />
   <img
     src="/landing-page-img.svg"

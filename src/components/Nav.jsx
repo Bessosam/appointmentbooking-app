@@ -33,7 +33,6 @@ const Nav = () => {
         </>
       ) : (
         <Link className={linkStyle} to="/register">
-          Skapa konto
         </Link>
       )}
     </nav>

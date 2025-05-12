@@ -47,8 +47,7 @@ const LoginPage = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen justify-center">
-      <PageDecoration />
+    <div className="flex flex-col items-center min-h-screen relative px-4 justify-center">
 
       {loading && (
         <>
@@ -61,7 +60,7 @@ const LoginPage = () => {
       )}
 
       <div
-        className="mt-6 flex min-h-full justify-center items-center h-full bg-gray-100 rounded-md p-4 bg-[#0053FF]/20 shadow-md"
+        className="flex min-h-full justify-center items-center h-full bg-gray-100 rounded-md p-4 bg-[#0053FF]/20 shadow-md"
         style={{ fontFamily: "Roboto, sans-serif" }}
       >
         <div className="w-full max-w-sm px-8 z-10">
@@ -78,6 +77,7 @@ const LoginPage = () => {
           />
         </div>
       </div>
+            <PageDecoration/>
     </div>
   );
 };
