@@ -14,7 +14,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState("login");
   const navigate = useNavigate();
- 
+
   const { login } = useAuth(); // <-- lägg till detta
 
   const handleSubmit = (e) => {
@@ -47,7 +47,6 @@ const LoginPage = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen relative px-4 justify-center">
-
       {loading && (
         <>
           <div className="absolute top-0 left-0 w-full h-full backdrop-blur bg-white/50 z-20" />
@@ -76,7 +75,9 @@ const LoginPage = () => {
           />
         </div>
       </div>
-            <PageDecoration/>
+      <div className="sm:mb-[150px] md:sm:mb-[150px]">
+        <PageDecoration />
+      </div>
     </div>
   );
 };
