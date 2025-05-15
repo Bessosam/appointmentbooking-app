@@ -28,7 +28,7 @@ const HomePage = () => {
            <House className="size-12 text-[#2958A9]"/> Hej, {user.userid}!
           </h1>
         ) : (
-          <h1 className="text-2xl font-bold mt-6">Välkommen!</h1>
+          <h1 className="text-2xl font-bold mt-6">Hej USER</h1>
         )}
         <h2 className="text-2xl font-bold mb-8">Välkommen till mina sidor</h2>
         <div className="grid w-full grid-cols-2 md:grid-cols-2 gap-6 mb-10 image-effect">
