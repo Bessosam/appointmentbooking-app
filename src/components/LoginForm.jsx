@@ -93,7 +93,7 @@ const LoginForm = ({
 
       <button
         type="submit"
-        className="w-full rounded-md font-semibold text-base py-3 transition-all duration-300 ease-in-out shadow-md cursor-pointer loginBtn"
+        className="w-full rounded-md font-semibold text-base py-4 transition-all duration-300 ease-in-out shadow-md cursor-pointer loginBtn"
         disabled={loading}
       >
         {loading

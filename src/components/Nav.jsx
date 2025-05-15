@@ -13,7 +13,7 @@ const Nav = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/"); // 👈 tillbaka till landningssidan
+    navigate("/");
     setMenuOpen(false);
   };
 
@@ -40,29 +40,92 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex gap-4 items-center">
-      {isLoggedIn ? (
-        <>
-        <Link className={linkStyle} to="/menu">
-        <span className="ml-2 text-black">👤  {user.name}</span>
-        </Link>
-          <Link className={linkStyle} to="/booking">
-            Boka tvättstuga
+    <div className="relative z-[999]" ref={menuRef}>
+      {/* Mobil: Hamburgerikon */}
+      <div className="md:hidden">
+        {menuOpen ? (
+          <X
+            className="w-8 h-8 cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          />
+        ) : (
+          <Menu
+            className="w-8 h-8 cursor-pointer"
+            onClick={() => setMenuOpen(true)}
+          />
+        )}
+      </div>
+
+      {/* Mobilmeny */}
+      <div
+        className={`${
+          menuOpen
+            ? "absolute top-full right-0 bg-white shadow-lg rounded-md p-4 w-64 animate-slide-in"
+            : "hidden"
+        } md:hidden`}
+      >
+        {isLoggedIn ? (
+          <>
+            <Link
+              className={linkStyle}
+              to="/menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              👤 {user.name}
+            </Link>
+            <Link
+              className={linkStyle}
+              to="/booking"
+              onClick={() => setMenuOpen(false)}
+            >
+              Boka tvättstuga
+            </Link>
+            <Link
+              className={linkStyle}
+              to="/mybookings"
+              onClick={() => setMenuOpen(false)}
+            >
+              Mina bokningar
+            </Link>
+            <button className={linkStyle} onClick={handleLogout}>
+              Logga ut
+            </button>
+          </>
+        ) : (
+          <Link
+            className={linkStyle}
+            to="/register"
+            onClick={() => setMenuOpen(false)}
+          >
+            Skapa konto
           </Link>
-          <Link className={linkStyle} to="/mybookings">
-            Mina bokningar
+        )}
+      </div>
+
+      {/* Desktop meny */}
+      <nav className="hidden md:flex gap-4 items-center">
+        {isLoggedIn ? (
+          <>
+            <Link className={linkStyle} to="/menu">
+              👤 {user.name}
+            </Link>
+            <Link className={linkStyle} to="/booking">
+              Boka tvättstuga
+            </Link>
+            <Link className={linkStyle} to="/mybookings">
+              Mina bokningar
+            </Link>
+            <button className={linkStyle} onClick={handleLogout}>
+              Logga ut
+            </button>
+          </>
+        ) : (
+          <Link className={linkStyle} to="/register">
+            Skapa konto
           </Link>
-          <button className={linkStyle} onClick={handleLogout}>
-            Logga ut
-          </button>
-          
-        </>
-      ) : (
-        <Link className={linkStyle} to="/register">
-          Skapa konto
-        </Link>
-      )}
-    </nav>
+        )}
+      </nav>
+    </div>
   );
 };
 

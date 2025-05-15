@@ -21,14 +21,10 @@ const HomePage = () => {
   return (
     <div className="flex min-h-screen justify-center">
       <div className="w-full h-screen grid-colums flex justify-center items-center rounded-md p-4 bg-white shadow-md flex-col">
-        {user ? (
-          <h1 className="text-4xl font-bold mb-8 flex items-center gap-2">
-            <House className="size-12 text-[#2958A9]" /> Hej, {user.userid}!
-          </h1>
-        ) : (
-          <h1 className="text-2xl font-bold mt-6">Välkommen!</h1>
-        )}
-        <h2 className="text-2xl font-bold mb-8">Välkommen till mina sidor</h2>
+        <div className="flex justify-center items-center gap-4">
+          <House className="size-10 text-black mb-8" />
+          <h2 className="text-2xl font-bold mb-8">Välkommen till mina sidor</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 image-effect">
           <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-8 rounded-xl shadow-lg">
             <WashingMachine size={40} className="text-[#0053FF]" />
