@@ -3,7 +3,7 @@ import React from "react";
 const PageDecoration = () => {
   return (
     <div>
-      <div className="absolute bottom-0 right-0 z-0 size-60 opacity-90 overflow-hidden">
+      <div className="absolute bottom-20 right-0 z-0 size-60 opacity-90 overflow-hidden">
         <img
           src="/DesignBG.svg"
           alt=""
