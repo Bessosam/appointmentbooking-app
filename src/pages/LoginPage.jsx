@@ -75,7 +75,7 @@ const LoginPage = () => {
           />
         </div>
       </div>
-      <div className="sm:mb-[150px] md:sm:mb-[150px]">
+      <div className="sm:mb-[150px] md:sm:mb-[150px] mb-[190px]">
         <PageDecoration />
       </div>
     </div>
