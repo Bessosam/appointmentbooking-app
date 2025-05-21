@@ -11,6 +11,8 @@ const Nav = () => {
 
   const linkStyle = "text-black tracking-wider font-semibold hover:underline block py-2";
 
+  const registerLinkStyle = "loginBtn text-white text-lg sm:text-md md:text-sm font-bold px-8 py-3 rounded opacity-95"
+
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -76,7 +78,7 @@ const Nav = () => {
 
       {/* Desktop menu */}
       <nav className="hidden md:flex gap-4 items-center">
-        {isLoggedIn && (
+        {isLoggedIn ? (
           <>
             <Link className={linkStyle} to="/menu">
               👤 {user.name}
@@ -92,7 +94,7 @@ const Nav = () => {
             </button>
           </>
         ) : (
-          <Link className="loginBtn text-white text-lg sm:text-md md:text-sm font-bold px-8 py-3 rounded opacity-95" to="/register">
+          <Link className={registerLinkStyle} to="/register">
             Skapa konto
           </Link>
         )}
