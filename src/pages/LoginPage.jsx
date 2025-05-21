@@ -27,7 +27,8 @@ const LoginPage = () => {
       );
 
       if (findUser) {
-        login(findUser); // <-- logga in användaren
+        login(findUser); // Log in user (update context)
+        localStorage.setItem("currentUser", JSON.stringify(findUser)); // Save to localStorage
         navigate("/menu");
       } else {
         alert("Wrong ID or Password");
