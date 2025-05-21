@@ -45,7 +45,7 @@ const MyBookings = () => {
     }
 
     setSelectedCancel(null);
-    alert(`Bokningen för ${date} kl. ${timeSlotRanges[time] || time} har avbokats.`);
+    /* alert(`Bokningen för ${date} kl. ${timeSlotRanges[time] || time} har avbokats.`); */
   };
 
   return (
