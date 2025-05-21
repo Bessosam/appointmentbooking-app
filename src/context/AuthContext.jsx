@@ -11,7 +11,9 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem("currentUser");
   };
+
 
   return (
     <AuthContext.Provider value={{ user, isLoggedIn: !!user, login, logout }}>

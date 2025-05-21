@@ -20,7 +20,9 @@ const BookingConfirmationPage = () => {
     if (!bookingDetails) return;
 
     const { date, time } = bookingDetails;
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+    // Get existing global booking data and update booking state for the time slot
     const existingData = JSON.parse(localStorage.getItem("bookingData")) || {};
     const updatedData = {
       ...existingData,
@@ -31,10 +33,20 @@ const BookingConfirmationPage = () => {
     };
     localStorage.setItem("bookingData", JSON.stringify(updatedData));
 
+    // Get current user's confirmed bookings, add new one, save back to user-specific key
     const myConfirmed =
-      JSON.parse(localStorage.getItem("confirmedBookings")) || [];
-    myConfirmed.push({ date, time });
-    localStorage.setItem("confirmedBookings", JSON.stringify(myConfirmed));
+      JSON.parse(localStorage.getItem(`confirmedBookings_${currentUser.userid}`)) || [];
+    // Check to avoid duplicate booking
+    if (!myConfirmed.find((b) => b.date === date && b.time === time)) {
+      myConfirmed.push({ date, time });
+      localStorage.setItem(
+        `confirmedBookings_${currentUser.userid}`,
+        JSON.stringify(myConfirmed)
+      );
+    }
+
+    // Clear selectedBooking after confirmation to prevent stale state
+    localStorage.removeItem("selectedBooking");
 
     navigate("/mybookings");
   };

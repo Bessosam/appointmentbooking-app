@@ -99,10 +99,10 @@ const LoginForm = ({
         {loading
           ? "Loggar In..."
           : mode === "login"
-          ? "Logga in"
-          : mode === "register"
-          ? "Registrera"
-          : "Skicka återställningslänk"}
+            ? "Logga in"
+            : mode === "register"
+              ? "Registrera"
+              : "Skicka återställningslänk"}
       </button>
 
       <div className="text-center mt-4">
