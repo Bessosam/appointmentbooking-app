@@ -1,242 +1,131 @@
 {
     "2025-05-20": [
-        {
-            "label": "07:00,10:00",
-            "available": true
-        },
-        {
-            "label": "09:00,11:00",
-            "available": true
-        },
-        {
-            "label": "10:00,13:00",
-            "available": false
-        },
-        {
-            "label": "11:00,13:00",
-            "available": false
-        },
-        {
-            "label": "13:00,16:00",
-            "available": true
-        },
-        {
-            "label": "16:00,19:00",
-            "available": true
-        },
-        {
-            "label": "19:00,22:00",
-            "available": false
-        }
+      {"label": "07:00-10:00", "available": true},
+      {"label": "10:00-13:00", "available": false},
+      {"label": "13:00-16:00", "available": true},
+      {"label": "16:00-19:00", "available": true},
+      {"label": "19:00-22:00", "available": false}
     ],
     "2025-05-21": [
-        {
-            "label": "07:00,10:00",
-            "available": false
-        },
-        {
-            "label": "09:00,11:00",
-            "available": true
-        },
-        {
-            "label": "10:00,13:00",
-            "available": true
-        },
-        {
-            "label": "11:00,13:00",
-            "available": false
-        },
-        {
-            "label": "13:00,16:00",
-            "available": true
-        },
-        {
-            "label": "16:00,19:00",
-            "available": false
-        },
-        {
-            "label": "19:00,22:00",
-            "available": true
-        }
+      {"label": "07:00-10:00", "available": false},
+      {"label": "10:00-13:00", "available": true},
+      {"label": "13:00-16:00", "available": true},
+      {"label": "16:00-19:00", "available": false},
+      {"label": "19:00-22:00", "available": true}
     ],
     "2025-05-22": [
-        {
-            "label": "07:00,10:00",
-            "available": true
-        },
-        {
-            "label": "09:00,11:00",
-            "available": false
-        },
-        {
-            "label": "10:00,13:00",
-            "available": true
-        },
-        {
-            "label": "11:00,13:00",
-            "available": true
-        },
-        {
-            "label": "13:00,16:00",
-            "available": false
-        },
-        {
-            "label": "16:00,19:00",
-            "available": true
-        },
-        {
-            "label": "19:00,22:00",
-            "available": true
-        }
+      {"label": "07:00-10:00", "available": true},
+      {"label": "10:00-13:00", "available": true},
+      {"label": "13:00-16:00", "available": false},
+      {"label": "16:00-19:00", "available": true},
+      {"label": "19:00-22:00", "available": true}
     ],
     "2025-05-23": [
-        {
-            "label": "07:00,10:00",
-            "available": false
-        },
-        {
-            "label": "09:00,11:00",
-            "available": false
-        },
-        {
-            "label": "10:00,13:00",
-            "available": true
-        },
-        {
-            "label": "11:00,13:00",
-            "available": true
-        },
-        {
-            "label": "13:00,16:00",
-            "available": false
-        },
-        {
-            "label": "16:00,19:00",
-            "available": false
-        },
-        {
-            "label": "19:00,22:00",
-            "available": true
-        }
+      {"label": "07:00-10:00", "available": false},
+      {"label": "10:00-13:00", "available": true},
+      {"label": "13:00-16:00", "available": false},
+      {"label": "16:00-19:00", "available": false},
+      {"label": "19:00-22:00", "available": true}
     ],
     "2025-05-24": [
-        {
-            "label": "07:00,10:00",
-            "available": true
-        },
-        {
-            "label": "09:00,11:00",
-            "available": true
-        },
-        {
-            "label": "10:00,13:00",
-            "available": false
-        },
-        {
-            "label": "11:00,13:00",
-            "available": true
-        },
-        {
-            "label": "13:00,16:00",
-            "available": true
-        },
-        {
-            "label": "16:00,19:00",
-            "available": false
-        },
-        {
-            "label": "19:00,22:00",
-            "available": false
-        }
+      {"label": "07:00-10:00", "available": true},
+      {"label": "10:00-13:00", "available": false},
+      {"label": "13:00-16:00", "available": true},
+      {"label": "16:00-19:00", "available": false},
+      {"label": "19:00-22:00", "available": false}
     ],
     "2025-05-25": [
-        {
-            "label": "07:00,10:00",
-            "available": true
-        },
-        {
-            "label": "09:00,11:00",
-            "available": true
-        },
-        {
-            "label": "10:00,13:00",
-            "available": true
-        },
-        {
-            "label": "11:00,13:00",
-            "available": false
-        },
-        {
-            "label": "13:00,16:00",
-            "available": false
-        },
-        {
-            "label": "16:00,19:00",
-            "available": false
-        },
-        {
-            "label": "19:00,22:00",
-            "available": false
-        }
+      {"label": "07:00-10:00", "available": true},
+      {"label": "10:00-13:00", "available": true},
+      {"label": "13:00-16:00", "available": false},
+      {"label": "16:00-19:00", "available": false},
+      {"label": "19:00-22:00", "available": false}
     ],
     "2025-05-26": [
-        {
-            "label": "07:00,10:00",
-            "available": false
-        },
-        {
-            "label": "09:00,11:00",
-            "available": false
-        },
-        {
-            "label": "10:00,13:00",
-            "available": false
-        },
-        {
-            "label": "11:00,13:00",
-            "available": true
-        },
-        {
-            "label": "13:00,16:00",
-            "available": true
-        },
-        {
-            "label": "16:00,19:00",
-            "available": true
-        },
-        {
-            "label": "19:00,22:00",
-            "available": true
-        }
+      {"label": "07:00-10:00", "available": false},
+      {"label": "10:00-13:00", "available": false},
+      {"label": "13:00-16:00", "available": true},
+      {"label": "16:00-19:00", "available": true},
+      {"label": "19:00-22:00", "available": true}
     ],
     "2025-05-27": [
-        {
-            "label": "07:00,10:00",
-            "available": true
-        },
-        {
-            "label": "09:00,11:00",
-            "available": true
-        },
-        {
-            "label": "10:00,13:00",
-            "available": true
-        },
-        {
-            "label": "11:00,13:00",
-            "available": true
-        },
-        {
-            "label": "13:00,16:00",
-            "available": false
-        },
-        {
-            "label": "16:00,19:00",
-            "available": false
-        },
-        {
-            "label": "19:00,22:00",
-            "available": false
-        }
-    ]
-}
+      {"label": "07:00-10:00", "available": true},
+      {"label": "10:00-13:00", "available": true},
+      {"label": "13:00-16:00", "available": false},
+      {"label": "16:00-19:00", "available": false},
+      {"label": "19:00-22:00", "available": false}
+    ],
+    
+        "2025-06-01": [
+          { "label": "07:00 – 10:00", "available": true },
+          { "label": "10:00 – 13:00", "available": false },
+          { "label": "13:00 – 16:00", "available": true },
+          { "label": "16:00 – 19:00", "available": true },
+          { "label": "19:00 – 22:00", "available": false }
+        ],
+        "2025-06-02": [
+          { "label": "07:00 – 10:00", "available": false },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": true },
+          { "label": "19:00 – 22:00", "available": true }
+        ],
+        "2025-06-03": [
+          { "label": "07:00 – 10:00", "available": true },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": false },
+          { "label": "19:00 – 22:00", "available": true }
+        ],
+        "2025-06-04": [
+          { "label": "07:00 – 10:00", "available": false },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": false },
+          { "label": "19:00 – 22:00", "available": true }
+        ],
+        "2025-06-05": [
+          { "label": "07:00 – 10:00", "available": true },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": true },
+          { "label": "19:00 – 22:00", "available": false }
+        ],
+        "2025-06-06": [
+          { "label": "07:00 – 10:00", "available": false },
+          { "label": "10:00 – 13:00", "available": false },
+          { "label": "13:00 – 16:00", "available": true },
+          { "label": "16:00 – 19:00", "available": true },
+          { "label": "19:00 – 22:00", "available": true }
+        ],
+        "2025-06-07": [
+          { "label": "07:00 – 10:00", "available": true },
+          { "label": "10:00 – 13:00", "available": false },
+          { "label": "13:00 – 16:00", "available": true },
+          { "label": "16:00 – 19:00", "available": false },
+          { "label": "19:00 – 22:00", "available": false }
+        ],
+        "2025-06-08": [
+          { "label": "07:00 – 10:00", "available": false },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": true },
+          { "label": "19:00 – 22:00", "available": true }
+        ],
+        "2025-06-09": [
+          { "label": "07:00 – 10:00", "available": true },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": false },
+          { "label": "19:00 – 22:00", "available": true }
+        ],
+        "2025-06-10": [
+          { "label": "07:00 – 10:00", "available": true },
+          { "label": "10:00 – 13:00", "available": true },
+          { "label": "13:00 – 16:00", "available": false },
+          { "label": "16:00 – 19:00", "available": false },
+          { "label": "19:00 – 22:00", "available": true }
+        ]
+      }
+      
+  

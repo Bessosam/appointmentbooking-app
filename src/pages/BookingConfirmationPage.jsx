@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import PageDecoration from "../components/PageDecoration";
 
@@ -16,14 +16,15 @@ const BookingConfirmationPage = () => {
   const bookingDetails =
     location.state || JSON.parse(localStorage.getItem("selectedBooking"));
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleConfirm = () => {
     if (!bookingDetails) return;
 
     const { date, time } = bookingDetails;
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-    // Get existing global booking data and update booking state for the time slot
     const existingData = JSON.parse(localStorage.getItem("bookingData")) || {};
+
     const updatedData = {
       ...existingData,
       [date]: {
@@ -33,10 +34,9 @@ const BookingConfirmationPage = () => {
     };
     localStorage.setItem("bookingData", JSON.stringify(updatedData));
 
-    // Get current user's confirmed bookings, add new one, save back to user-specific key
     const myConfirmed =
       JSON.parse(localStorage.getItem(`confirmedBookings_${currentUser.userid}`)) || [];
-    // Check to avoid duplicate booking
+
     if (!myConfirmed.find((b) => b.date === date && b.time === time)) {
       myConfirmed.push({ date, time });
       localStorage.setItem(
@@ -45,19 +45,31 @@ const BookingConfirmationPage = () => {
       );
     }
 
-    // Clear selectedBooking after confirmation to prevent stale state
     localStorage.removeItem("selectedBooking");
-
     navigate("/mybookings");
   };
 
   const handleCancel = () => {
-    const confirmCancel = window.confirm(
-      "Är du säker på att du vill avbryta bokningen?"
-    );
-    if (confirmCancel) {
-      navigate("/booking");
+    setShowModal(true);
+  };
+
+  const confirmCancel = () => {
+    if (bookingDetails) {
+      const { date, time } = bookingDetails;
+      const existingData = JSON.parse(localStorage.getItem("bookingData")) || {};
+      if (existingData[date] && existingData[date][time]) {
+        existingData[date][time] = "available";
+        localStorage.setItem("bookingData", JSON.stringify(existingData));
+      }
     }
+
+    localStorage.removeItem("selectedBooking");
+    setShowModal(false);
+    navigate("/booking");
+  };
+
+  const cancelModal = () => {
+    setShowModal(false);
   };
 
   if (!bookingDetails) {
@@ -67,7 +79,7 @@ const BookingConfirmationPage = () => {
           Ingen bokningsinformation hittades
         </h2>
         <button
-          onClick={handleCancel}
+          onClick={() => navigate("/booking")}
           className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
         >
           Tillbaka
@@ -76,11 +88,10 @@ const BookingConfirmationPage = () => {
     );
   }
 
-  const displayTime =
-    timeSlotRanges[bookingDetails.time] || bookingDetails.time;
+  const displayTime = timeSlotRanges[bookingDetails.time] || bookingDetails.time;
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
+    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl relative">
       <h2 className="text-2xl font-bold text-center mb-4">Bekräfta Bokning</h2>
       <div className="text-gray-800 space-y-2 mb-6">
         <p>
@@ -107,9 +118,35 @@ const BookingConfirmationPage = () => {
           Bekräfta
         </button>
       </div>
-      <div className="absolute bottom-[-90px] right-0 z-0 size-60">
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center w-80">
+            <p className="text-lg font-semibold mb-4">
+              Vill du verkligen avbryta bokningen?
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={confirmCancel}
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              >
+                Ja
+              </button>
+              <button
+                onClick={cancelModal}
+                className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
+              >
+                Nej
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* <div className="absolute bottom-[-90px] right-0 z-0 size-60 opacity-20">
         <PageDecoration />
-      </div>
+      </div> */}
     </div>
   );
 };
