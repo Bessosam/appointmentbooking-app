@@ -20,34 +20,34 @@ const HomePage = () => {
 
   return (
     <div className="flex min-h-screen justify-center">
-      <div className="w-full h-screen grid-colums flex justify-center items-center rounded-md p-4 bg-white shadow-md flex-col">
-        <div className="flex justify-center items-center gap-4">
-          <House className="size-10 text-black mb-8" />
-          <h2 className="text-2xl font-bold mb-8">Välkommen till mina sidor</h2>
+      <div className="w-full h-screen grid-colums flex justify-center items-center rounded-md p-4 bg-white shadow-md flex-col bg-1">
+        <div className="flex justify-center items-center gap-4 mb-8">
+          <House className="size-14 text-stone-50 mb-8 opacity-70" />
+          <h2 className="text-3xl font-bold mb-8 text-stone-50">Välkommen till mina sidor</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 image-effect">
-          <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-8 rounded-xl shadow-lg">
-            <WashingMachine size={40} className="text-[#0053FF]" />
-            <h2 className="font-bold text-3xl text-center">Boka tvättstuga</h2>
+          <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-3 sm:p-6 rounded-xl shadow-lg">
+            <Calendar size={30} className="text-[#0053FF]" />
+            <h2 className="font-bold text-xl text-center">Boka tvättstuga</h2>
             <button
               onClick={() => {
                 navigate("/booking");
               }}
-              className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-xl"
+              className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-lg"
             >
               {" "}
               Boka nu
             </button>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-8 rounded-xl shadow-lg">
-            <WashingMachine size={40} className="text-[#0053FF]" />
-            <h2 className="font-bold text-3xl text-center">Mina bokningar</h2>
+          <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-3 sm:p-6 rounded-xl shadow-lg">
+            <WashingMachine size={30} className="text-[#0053FF]" />
+            <h2 className="font-bold text-xl text-center">Mina bokningar</h2>
             <button
               onClick={() => {
                 navigate("/mybookings");
               }}
-              className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-xl"
+              className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-lg"
             >
               {" "}
               Se här

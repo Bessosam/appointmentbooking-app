@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import PageDecoration from "../components/PageDecoration";
 
 const timeSlotRanges = {
   "07:00": "07:00 – 10:00",
@@ -100,6 +101,9 @@ const BookingConfirmationPage = () => {
         >
           Bekräfta
         </button>
+      </div>
+            <div className="absolute bottom-[-90px] right-0 z-0 size-60">
+        <PageDecoration />
       </div>
     </div>
   );

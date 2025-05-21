@@ -1,7 +1,6 @@
-// MyBookings.jsx
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PageDecoration from '../components/PageDecoration';
 const timeSlotRanges = {
   "07:00": "07:00 – 10:00",
   "10:00": "10:00 – 13:00",
@@ -86,6 +85,9 @@ const MyBookings = () => {
                 >
                   Avboka
                 </button>
+              </div>
+              <div className="absolute bottom-[-90px] right-0 z-0 size-60">
+                <PageDecoration />
               </div>
             </li>
           ))}

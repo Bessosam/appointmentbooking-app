@@ -8,6 +8,8 @@ import PageDecoration from "../components/PageDecoration";
 
 import { useAuth } from "../context/AuthContext"; // <-- lägg till detta
 
+import { useLocation } from "react-router-dom";
+
 const LoginPage = () => {
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,16 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const { login } = useAuth(); // <-- lägg till detta
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/register") {
+      setMode('register');
+    } else {
+      setMode('login');
+    }
+  }, [location.pathname]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +59,7 @@ const LoginPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-screen relative px-4 justify-center">
+    <div className="flex flex-col items-center min-h-screen relative px-4 justify-center p-4 bg-1">
       {loading && (
         <>
           <div className="absolute top-0 left-0 w-full h-full backdrop-blur bg-white/50 z-20" />
@@ -59,9 +71,7 @@ const LoginPage = () => {
       )}
 
       <div
-        className="flex min-h-full justify-center items-center h-full bg-gray-100 rounded-md p-4 bg-[#0053FF]/20 shadow-md"
-        style={{ fontFamily: "Roboto, sans-serif" }}
-      >
+        className="flex min-h-full justify-center items-center h-full bg-gray-100 rounded-md p-4 bg-[#0053FF]/20 shadow-md">
         <div className="w-full max-w-sm px-8 z-10">
           <LoginTitle mode={mode} />
           <LoginForm
@@ -76,7 +86,7 @@ const LoginPage = () => {
           />
         </div>
       </div>
-      <div className="sm:mb-[150px] md:sm:mb-[150px]">
+      <div className="sm:mb-[150px] md:sm:mb-[150px] mb-[190px]">
         <PageDecoration />
       </div>
     </div>

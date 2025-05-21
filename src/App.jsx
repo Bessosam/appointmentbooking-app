@@ -11,7 +11,7 @@ import MyBookings from './pages/MyBookings'
 
 const App = ({setMode}) => {
   return (
-    <>
+    <div style={{ fontFamily: "Roboto, sans-serif" }}>
       <Header />
       <Routes>
         <Route path='/' element={<HomePage/>}/>
@@ -20,8 +20,9 @@ const App = ({setMode}) => {
         <Route path='/booking' element={<BookingPage />}/>
         <Route path='/confirm' element={<BookingConfirmationPage/>}/>
         <Route path='/mybookings' element={<MyBookings/>}/>
+        <Route path='/register' element={<LoginPage/>}/>
       </Routes>
-    </>
+    </div>
   );
 };
 
