@@ -20,6 +20,7 @@ const App = ({setMode}) => {
         <Route path='/booking' element={<BookingPage />}/>
         <Route path='/confirm' element={<BookingConfirmationPage/>}/>
         <Route path='/mybookings' element={<MyBookings/>}/>
+        <Route path='/register' element={<LoginPage/>}/>
       </Routes>
     </>
   );

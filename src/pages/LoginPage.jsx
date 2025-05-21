@@ -8,6 +8,8 @@ import PageDecoration from "../components/PageDecoration";
 
 import { useAuth } from "../context/AuthContext"; // <-- lägg till detta
 
+import { useLocation } from "react-router-dom";
+
 const LoginPage = () => {
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,16 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const { login } = useAuth(); // <-- lägg till detta
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/register") {
+      setMode('register');
+    } else {
+      setMode('login');
+    }
+  }, [location.pathname]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
