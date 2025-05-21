@@ -1,8 +1,9 @@
 .bg-1 {
 background-image: 
- linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)),
-url("/laundryroom.png");
+ linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)),
+url("/laundryroom4.jpg");
 position: relative;
+  background-size: cover;
   background-position: center;
 }
 

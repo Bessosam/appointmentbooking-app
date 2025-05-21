@@ -19,8 +19,7 @@ export default function Homepage() {
         </h2>
         <button
           onClick={() => navigate("/login")}
-          className="mt-6 text-white text-lg sm:text-2xl md:text-3xl font-bold px-8 py-3 rounded"
-          style={{ backgroundColor: "#2958A9" }}
+          className="mt-6 text-white text-lg sm:text-2xl md:text-3xl font-bold px-8 py-3 rounded loginBtn"
         >
           Logga in
         </button>

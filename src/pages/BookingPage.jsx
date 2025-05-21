@@ -45,7 +45,7 @@ const BookingPage = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto px-8 py-6">
+    <div className="max-w-screen-xl mx-auto px-8 py-6 bg-1">
       <h1 className="text-2xl font-bold text-center mb-6">Boka en Tidslucka</h1>
       <div className="flex flex-col md:flex-row gap-10 justify-center">
         <div className="bg-white shadow-md rounded p-4 w-[360px]">

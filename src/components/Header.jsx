@@ -14,9 +14,7 @@ const Header = () => {
 
   return (
     <header
-      className={`flex justify-between items-center p-4 w-full 
-        ${isLoggedIn ? "bg-[#306ce933]" : "bg-white"} 
-        text-black`}
+      className="flex justify-between items-center p-4 w-full text-black bg-gray-100"
     >
       <img
         src={logo}

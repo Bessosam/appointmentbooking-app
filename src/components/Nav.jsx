@@ -9,7 +9,7 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
 
-  const linkStyle = "text-[#2952a9] font-semibold hover:underline block py-2";
+  const linkStyle = "text-black tracking-wider font-semibold hover:underline block py-2";
 
   const handleLogout = () => {
     logout();
@@ -120,7 +120,7 @@ const Nav = () => {
             </button>
           </>
         ) : (
-          <Link className={linkStyle} to="/register">
+          <Link className="loginBtn text-white text-lg sm:text-md md:text-sm font-bold px-8 py-3 rounded opacity-95" to="/register">
             Skapa konto
           </Link>
         )}
