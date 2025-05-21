@@ -33,7 +33,7 @@ const HomePage = () => {
               onClick={() => {
                 navigate("/booking");
               }}
-              className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-lg"
+              className="flex flex-col items-center justify-center rounded-lg p-2 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-lg"
             >
               {" "}
               Boka nu
@@ -47,7 +47,7 @@ const HomePage = () => {
               onClick={() => {
                 navigate("/mybookings");
               }}
-              className="flex flex-col items-center justify-center rounded-lg p-4 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-lg"
+              className="flex flex-col items-center justify-center rounded-lg p-2 w-full text-white bg-[#2958A9] hover:bg-[#0053FF]/60 transition text-lg"
             >
               {" "}
               Se här

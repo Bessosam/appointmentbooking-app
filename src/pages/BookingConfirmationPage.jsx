@@ -63,7 +63,7 @@ const BookingConfirmationPage = () => {
     timeSlotRanges[bookingDetails.time] || bookingDetails.time;
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
+    <div className="max-w-lg mx-auto mt-24 p-6 bg-white shadow-lg rounded-xl">
       <h2 className="text-2xl font-bold text-center mb-4">Bekräfta Bokning</h2>
       <div className="text-gray-800 space-y-2 mb-6">
         <p>

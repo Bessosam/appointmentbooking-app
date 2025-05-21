@@ -7,7 +7,7 @@ const PageDecoration = () => {
         <img
           src="/DesignBG.svg"
           alt=""
-          className="absolute top-10 right-0 z-0 w-full h-full image-effect"
+          className="absolute bottom-0 right-0 w-72 sm:w-96 md:w-[500px] object-contain z-0 image-effect"
         />
         <img
           src="/landing-page-img.svg"
