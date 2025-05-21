@@ -1,3 +1,11 @@
+.bg-1 {
+background-image: 
+ linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)),
+url("/laundryroom.png");
+position: relative;
+  background-position: center;
+}
+
 .loginBtn {
   background-color: #2958A9;
   color: white;
