@@ -40,7 +40,12 @@ const BookingConfirmationPage = () => {
   };
 
   const handleCancel = () => {
-    navigate("/booking");
+    const confirmCancel = window.confirm(
+      "Är du säker på att du vill avbryta bokningen?"
+    );
+    if (confirmCancel) {
+      navigate("/booking");
+    }
   };
 
   if (!bookingDetails) {
@@ -90,7 +95,7 @@ const BookingConfirmationPage = () => {
           Bekräfta
         </button>
       </div>
-            <div className="absolute bottom-[-90px] right-0 z-0 size-60">
+      <div className="absolute bottom-[-90px] right-0 z-0 size-60">
         <PageDecoration />
       </div>
     </div>

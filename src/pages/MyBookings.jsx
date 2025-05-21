@@ -60,7 +60,7 @@ const MyBookings = () => {
                   Avboka
                 </button>
               </div>
-                    <div className="absolute bottom-[-90px] right-0 z-0 size-60">
+                    <div className="fixed bottom-[-90px] right-0 z-0 size-60">
         <PageDecoration />
       </div>
             </li>

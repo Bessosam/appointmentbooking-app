@@ -13,7 +13,7 @@ const BookingPage = () => {
 
   
   useEffect(() => {
-    const localData = localStorage.getItem('bookingData');
+    const localData = localStorage.removeItem('bookingData');
     if (localData) {
       setBookingData(JSON.parse(localData));
     } else {
@@ -38,7 +38,11 @@ const BookingPage = () => {
     };
 
     setBookingData(updatedData);
-    localStorage.setItem('bookingData', JSON.stringify(updatedData));
+  
+localStorage.setItem('selectedBooking', JSON.stringify({ date: dateKey, time }));
+
+navigate('/confirm', { state: { date: dateKey, time } });
+
     localStorage.setItem('selectedBooking', JSON.stringify({ date: dateKey, time }));
 
     navigate('/confirm');
@@ -49,13 +53,15 @@ const BookingPage = () => {
       <h1 className="text-2xl font-bold text-center mb-6">Boka en Tidslucka</h1>
       <div className="flex flex-col md:flex-row gap-10 justify-center">
         <div className="bg-white shadow-md rounded p-4 w-[360px]">
-          <Calendar onChange={setSelectedDate} value={selectedDate} />
+          <Calendar onChange={setSelectedDate} value={selectedDate} minDate={new Date()} className="mx-auto"/>
         </div>
+        {selectedDate && selectedDate >= new Date().setHours(0,0,0,0)&& (
         <WeeklySlotGrid
           selectedDate={selectedDate}
           bookingData={bookingData}
           onBook={handleBook}
         />
+        )}
       </div>
     </div>
   );
