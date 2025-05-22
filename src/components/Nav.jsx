@@ -9,7 +9,9 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
 
-  const linkStyle = "text-[#2952a9] font-semibold hover:underline block py-2";
+  const linkStyle = "text-black tracking-wider font-semibold hover:underline block py-2";
+
+  const registerLinkStyle = "loginBtn text-white text-lg sm:text-md md:text-sm font-bold px-8 py-3 rounded opacity-95"
 
   const handleLogout = () => {
     logout();
@@ -17,7 +19,6 @@ const Nav = () => {
     setMenuOpen(false);
   };
 
-  // 👇 Stäng meny om man klickar utanför
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -28,7 +29,6 @@ const Nav = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 👇 Stäng meny om fönsterstorlek blir större än md
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -41,22 +41,16 @@ const Nav = () => {
 
   return (
     <div className="relative z-[999]" ref={menuRef}>
-      {/* Mobil: Hamburgerikon */}
+      {/* Mobile: Hamburger icon */}
       <div className="md:hidden">
         {menuOpen ? (
-          <X
-            className="w-8 h-8 cursor-pointer"
-            onClick={() => setMenuOpen(false)}
-          />
+          <X className="w-8 h-8 cursor-pointer" onClick={() => setMenuOpen(false)} />
         ) : (
-          <Menu
-            className="w-8 h-8 cursor-pointer"
-            onClick={() => setMenuOpen(true)}
-          />
+          <Menu className="w-8 h-8 cursor-pointer" onClick={() => setMenuOpen(true)} />
         )}
       </div>
 
-      {/* Mobilmeny */}
+      {/* Mobile menu */}
       <div
         className={`${
           menuOpen
@@ -64,45 +58,25 @@ const Nav = () => {
             : "hidden"
         } md:hidden`}
       >
-        {isLoggedIn ? (
+        {isLoggedIn && (
           <>
-            <Link
-              className={linkStyle}
-              to="/menu"
-              onClick={() => setMenuOpen(false)}
-            >
+            <Link className={linkStyle} to="/menu" onClick={() => setMenuOpen(false)}>
               👤 {user.name}
             </Link>
-            <Link
-              className={linkStyle}
-              to="/booking"
-              onClick={() => setMenuOpen(false)}
-            >
+            <Link className={linkStyle} to="/booking" onClick={() => setMenuOpen(false)}>
               Boka tvättstuga
             </Link>
-            <Link
-              className={linkStyle}
-              to="/mybookings"
-              onClick={() => setMenuOpen(false)}
-            >
+            <Link className={linkStyle} to="/mybookings" onClick={() => setMenuOpen(false)}>
               Mina bokningar
             </Link>
             <button className={linkStyle} onClick={handleLogout}>
               Logga ut
             </button>
           </>
-        ) : (
-          <Link
-            className={linkStyle}
-            to="/register"
-            onClick={() => setMenuOpen(false)}
-          >
-            Skapa konto
-          </Link>
         )}
       </div>
 
-      {/* Desktop meny */}
+      {/* Desktop menu */}
       <nav className="hidden md:flex gap-4 items-center">
         {isLoggedIn ? (
           <>
@@ -120,7 +94,7 @@ const Nav = () => {
             </button>
           </>
         ) : (
-          <Link className={linkStyle} to="/register">
+          <Link className={registerLinkStyle} to="/register">
             Skapa konto
           </Link>
         )}

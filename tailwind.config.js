@@ -6,6 +6,8 @@ export default {
       animation: {
         "slide-in": "slideIn 0.3s ease-out forwards",
       },
+      backgroundImage: {
+       '1': "url('/laundryroom.jpg')",
       keyframes: {
         slideIn: {
           "0%": { transform: "translateX(100%)", opacity: 0 },
@@ -15,4 +17,5 @@ export default {
     },
   },
   plugins: [],
-};
+}
+}

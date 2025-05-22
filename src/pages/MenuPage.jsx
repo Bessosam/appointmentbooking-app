@@ -22,8 +22,8 @@ const HomePage = () => {
     <div className="flex min-h-screen justify-center">
       <div className="w-full h-screen grid-colums flex justify-center items-center rounded-md p-4 bg-white shadow-md flex-col bg-1">
         <div className="flex justify-center items-center gap-4 mb-8">
-          <House className="size-14 text-stone-50 mb-8 opacity-70" />
-          <h2 className="text-3xl font-bold mb-8 text-stone-50">Välkommen till mina sidor</h2>
+          <House className="size-14 text-stone mb-8 opacity-70" />
+          <h2 className="text-3xl font-bold mb-8 text-stone-900">Välkommen till mina sidor</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 image-effect">
           <div className="flex flex-col items-center justify-center gap-4 bg-[#0053FF]/20 font-semibold p-3 sm:p-6 rounded-xl shadow-lg">
@@ -56,7 +56,6 @@ const HomePage = () => {
         </div>
       </div>
       <div className="absolute bottom-[-90px] right-0 z-0 size-60">
-        <PageDecoration />
       </div>
     </div>
   );

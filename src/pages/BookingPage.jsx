@@ -6,7 +6,7 @@ import WeeklySlotGrid from '../components/WeeklySlotGrid';
 
 const BookingPage = () => {
   const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setDate(tomorrow.getDate() );
 
   const [selectedDate, setSelectedDate] = useState(tomorrow);
   const [bookingData, setBookingData] = useState({});
@@ -52,8 +52,8 @@ const BookingPage = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto px-8 py-6">
-      <h1 className="text-2xl font-bold text-center mb-6">Boka en Tidslucka</h1>
+    <div className="min-h-screen mx-auto px-8 py-6 bg-1 bg-cover bg-center">
+      <h1 className="text-2xl font-bold text-center mb-6">Boka en tvättid</h1>
       <div className="flex flex-col md:flex-row gap-10 justify-center">
         <div className="bg-white shadow-md rounded p-4 w-[360px]">
           <Calendar
